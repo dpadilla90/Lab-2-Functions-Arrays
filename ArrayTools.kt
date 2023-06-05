@@ -21,12 +21,15 @@ fun main() {
     // print(encryptedString)
 
     fun arrayContains (inputArray: Array<Int>, searchValue: Int): Boolean {
-        for (element in array) {
+        for (element in inputArray) {
             if (element == searchValue) {
                 return true
+        
             }
         }
         return false
     }
+
+    print(arrayContains(arrayOf(1,2,3,4,5,6),0))
 
 }
