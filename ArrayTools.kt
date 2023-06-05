@@ -44,6 +44,20 @@ fun main() {
         return false
     }
 
-    print(arrayContains(arrayOf(1,2,3,4,5,6),0))
+    println(arrayContains(arrayOf(1,2,3,4,5,6),0))
 
+    //Reverse Array function #4
+    fun reverseArray(inputArray: Array<Int>): Array<Int> {
+        val reversedArray = Array(inputArray.size) { 0 } // Create a new array of the same size
+    
+        for (i in 0 until inputArray.size) {
+            reversedArray[i] = inputArray[inputArray.size - 1 - i] // Copy elements in reverse order
+        }
+    
+        return reversedArray
+    }
+    
+    val originalArray = arrayOf(1, 2, 3, 4, 5, 6)
+    val reversedArray = reverseArray(originalArray)
+    println("Reversed Array: ${reversedArray.joinToString(", ")}")
 }
