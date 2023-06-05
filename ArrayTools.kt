@@ -1,6 +1,6 @@
 fun main() {
 
-    fun ceaserCipher(inputString: String, shiftAmount: Int): String {
+    fun encrypt(inputString: String, shiftAmount: Int): String {
         val array1 = inputString.toCharArray()
 
         // Modifying the original array
@@ -13,10 +13,20 @@ fun main() {
 
             array1[0] = temp // Place the stored element at the beginning
         }
-        val shiftedString = array1.joinToString("")
-        return shiftedString
+        val shiftedString = array1.joinToString("") //array1 es converted back to a string
+        return shiftedString //returns shifted string
     }
 
-    val string: String = ceaserCipher("1234567", 3)
-    print(string)
+    // val encryptedString: String = encrypt("Carlos", 3)
+    // print(encryptedString)
+
+    fun arrayContains (inputArray: Array<Int>, searchValue: Int): Boolean {
+        for (element in array) {
+            if (element == searchValue) {
+                return true
+            }
+        }
+        return false
+    }
+
 }
