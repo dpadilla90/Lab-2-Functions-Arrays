@@ -16,9 +16,14 @@ fun main() {
         val shiftedString = array1.joinToString("") //array1 es converted back to a string
         return shiftedString //returns shifted string
     }
+    // Prompt the user for input
+    print("Enter a string: ")
+    val inputString = readLine() ?: "" // Read user input, default to empty string if null
+    print("Enter a shift amount: ")
+    val shiftAmount = readLine()?.toIntOrNull() ?: 0 // Read user input as Int, default to 0 if null or invalid
     
-    val encryptedString: String = encrypt("Carlos", 3) //store result in val
-    println(encryptedString) // print result
+    val encryptedString: String = encrypt(inputString, shiftAmount) // Store the result in a val
+    println("Encrypted String: $encryptedString") // Print the encrypted string
 
     //Average function #2
     fun arrayAvg(inputArray: Array<Int>): Double {
