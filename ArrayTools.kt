@@ -1,8 +1,12 @@
 fun main() {
-
+    //Tester for function #1
+    encryptFunctionTester();
     //Test Function #2
     averageArrayTester ();
-
+    //tester for function #3
+    arrayContainsTester();
+    //tester for function #4
+    reverseArrayTester();
 }
 
 //Encrpt function #1
@@ -22,15 +26,16 @@ fun encrypt(inputString: String, shiftAmount: Int): String {
     val shiftedString = array1.joinToString("") //array1 es converted back to a string
     return shiftedString //returns shifted string
 }
-// Prompt the user for input
-print("Enter a string: ")
+// Tester function for the encrypt function
+fun encryptFunctionTester(){
+println("Enter a string: ")
 val inputString = readLine() ?: "" // Read user input, default to empty string if null
-print("Enter a shift amount: ")
+println("Enter a shift amount: ")
 val shiftAmount = readLine()?.toIntOrNull() ?: 0 // Read user input as Int, default to 0 if null or invalid
 
 val encryptedString: String = encrypt(inputString, shiftAmount) // Store the result in a val
 println("Encrypted String: $encryptedString") // Print the encrypted string
-
+}
 /**
 *Averages the elements of an Integer Array and outputs the average as a double
 *@param inputArray The  array that will be averaged
@@ -68,8 +73,14 @@ fun arrayContains (inputArray: Array<Int>, searchValue: Int): Boolean {
     return false
 }
 
+fun arrayContainsTester(){
+    val array = arrayOf(1,2,3,4,5,6);
+    val 
+    println(Array: $array)
+    println
+    println(arrayContains(array,0)) //print result
+}
 
-println(arrayContains(arrayOf(1,2,3,4,5,6),0)) //print result
 
 //Reverse Array function #4
 fun reverseArray(inputArray: Array<Int>): Array<Int> {
@@ -82,7 +93,12 @@ fun reverseArray(inputArray: Array<Int>): Array<Int> {
     return reversedArray
 }
 
-val originalArray = arrayOf(1, 2, 3, 4, 5, 6)
-val reversedArray = reverseArray(originalArray)
-println("Reversed Array: ${reversedArray.joinToString(", ")}")
+fun reverseArrayTester(){
+
+    val originalArray = arrayOf(1, 2, 3, 4, 5, 6)
+    println("Original Array: ${originalArray.joinToString(", ")}")
+    val reversedArray = reverseArray(originalArray)
+    println("Reversed Array: ${reversedArray.joinToString(", ")}")
+
+}
 
