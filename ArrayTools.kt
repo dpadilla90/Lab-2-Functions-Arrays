@@ -1,4 +1,5 @@
-fun main() {
+fun main() {}
+
     //Encrpt function #1
     fun encrypt(inputString: String, shiftAmount: Int): String {
         val array1 = inputString.toCharArray()
@@ -25,7 +26,11 @@ fun main() {
     val encryptedString: String = encrypt(inputString, shiftAmount) // Store the result in a val
     println("Encrypted String: $encryptedString") // Print the encrypted string
 
-    //Average function #2
+/**
+*Averages the elements of an Integer Array and outputs the average as a double
+*@param inputArray The  array that will be averaged
+*@return The average value of inputArray
+*/
     fun arrayAvg(inputArray: Array<Int>): Double {
         var total = 0.0 // initialize total as double
         for (element in inputArray) {
@@ -65,4 +70,4 @@ fun main() {
     val originalArray = arrayOf(1, 2, 3, 4, 5, 6)
     val reversedArray = reverseArray(originalArray)
     println("Reversed Array: ${reversedArray.joinToString(", ")}")
-}
+
