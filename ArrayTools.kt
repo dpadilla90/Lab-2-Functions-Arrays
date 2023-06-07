@@ -9,7 +9,13 @@ fun main() {
     reverseArrayTester();
 }
 
-//Encrpt function #1
+/**
+ * Encrypts the given input string by shifting each character to the right by the specified shift amount.
+ *
+ * @param inputString The string to be encrypted.
+ * @param shiftAmount The amount by which each character should be shifted.
+ * @return The encrypted string.
+ */
 fun encrypt(inputString: String, shiftAmount: Int): String {
     val array1 = inputString.toCharArray()
 
@@ -26,21 +32,24 @@ fun encrypt(inputString: String, shiftAmount: Int): String {
     val shiftedString = array1.joinToString("") //array1 es converted back to a string
     return shiftedString //returns shifted string
 }
-// Tester function for the encrypt function
-fun encryptFunctionTester(){
-println("Enter a string: ")
-val inputString = readLine() ?: "" // Read user input, default to empty string if null
-println("Enter a shift amount: ")
-val shiftAmount = readLine()?.toIntOrNull() ?: 0 // Read user input as Int, default to 0 if null or invalid
 
-val encryptedString: String = encrypt(inputString, shiftAmount) // Store the result in a val
-println("Encrypted String: $encryptedString") // Print the encrypted string
+//Function tester code
+fun encryptFunctionTester(){
+    println("Enter a string: ")
+    val inputString = readLine() ?: "" // Read user input, default to empty string if null
+    println("Enter a shift amount: ")
+    val shiftAmount = readLine()?.toIntOrNull() ?: 0 // Read user input as Int, default to 0 if null or invalid
+
+    val encryptedString: String = encrypt(inputString, shiftAmount) // Store the result in a val
+    println("Encrypted String: $encryptedString") // Print the encrypted string
 }
+
 /**
-*Averages the elements of an Integer Array and outputs the average as a double
-*@param inputArray The  array that will be averaged
-*@return Double - Average values as Double, or 0 if inputArray is empty
-*/
+ * Calculates the average of the elements in the given inputArray.
+ *
+ * @param inputArray The array of integers for which to calculate the average.
+ * @return The average of the elements in the inputArray. Returns 0.0 if the inputArray is empty.
+ */
 fun arrayAvg(inputArray: Array<Int>): Double {
     if(inputArray.isEmpty()){ //Avoid divide by 0 in return
         return 0.0
@@ -62,27 +71,43 @@ fun averageArrayTester (){
 
 
 
-//Array Contain Function #3
-fun arrayContains (inputArray: Array<Int>, searchValue: Int): Boolean {
-    for (element in inputArray) {
-        if (element == searchValue) {
-            return true
-    
+/**
+ * Checks if the given inputArray contains the specified searchValue.
+ *
+ * @param inputArray The array of integers to search within.
+ * @param searchValue The value to search for in the inputArray.
+ * @return true if the searchValue is found in the inputArray, false otherwise.
+ */
+fun arrayContains(inputArray: Array<Int>, searchValue: Int): Boolean {
+    for (element in inputArray) { // Iterate through each element in the inputArray
+        if (element == searchValue) { // Check if the current element matches the searchValue
+            return true // Return true if a match is found
         }
     }
-    return false
+    return false // Return false if no match is found
 }
-
+//Function tester
 fun arrayContainsTester(){
-    val array = arrayOf(1,2,3,4,5,6);
-    val 
-    println(Array: $array)
-    println
-    println(arrayContains(array,0)) //print result
+    val array = arrayOf(1, 2, 3, 4, 5, 6)
+    val integer = 0
+    println("Input array: ${array.joinToString(", ")}")
+    println("Search value: $integer")
+    println(arrayContains(array,integer)) 
+
+    val array2 = arrayOf(1, -2, 3, -4, 5, 6)
+    val integer2 = -2
+    println("Input array: ${array2.joinToString(", ")}")
+    println("Search value: $integer2")
+    println(arrayContains(array2,integer2)) 
 }
 
 
-//Reverse Array function #4
+/**
+ * Reverses the elements in the given inputArray.
+ *
+ * @param inputArray The array of integers to be reversed.
+ * @return The reversed array.
+ */
 fun reverseArray(inputArray: Array<Int>): Array<Int> {
     val reversedArray = Array(inputArray.size) { 0 } // Create a new array of the same size
 
@@ -90,15 +115,21 @@ fun reverseArray(inputArray: Array<Int>): Array<Int> {
         reversedArray[i] = inputArray[inputArray.size - 1 - i] // Copy elements in reverse order
     }
 
-    return reversedArray
+    return reversedArray // Return reversed array
 }
 
+//Function tester
 fun reverseArrayTester(){
 
     val originalArray = arrayOf(1, 2, 3, 4, 5, 6)
     println("Original Array: ${originalArray.joinToString(", ")}")
     val reversedArray = reverseArray(originalArray)
     println("Reversed Array: ${reversedArray.joinToString(", ")}")
+
+    val originalArray2 = arrayOf(-2, -3, -4, -5, -6)
+    println("Original Array: ${originalArray2.joinToString(", ")}")
+    val reversedArray2 = reverseArray(originalArray2)
+    println("Reversed Array: ${reversedArray2.joinToString(", ")}")
 
 }
 
